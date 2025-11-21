@@ -1,15 +1,23 @@
-<html>
-  <body>
-    <h1><%= title %></h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Message Board</title>
+</head>
+    <body>
+        
+        <h2><%= title %></h2>
+        <% messages.forEach((message) => {
+            %>
+            <div>
+                <strong><%= message.user %></strong>
+                <p><%= message.text %></p>
+                <small><%= message.added %></small>
+                </div>
+        <% }) %>
 
-    <% message.forEach ((message) => { %>
-    <div>
-      <strong><%= message.user %></strong>
-      <p><%= message.text %></p>
-      <small><%= message.added %></small>
-    </div>
-    <% }) %>
+        <a href="/new">Add a new message</a>
 
-    <a href="/new">Add a new message</a>
-  </body>
+    </body>
 </html>
